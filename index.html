@@ -1,141 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Layout</title>
-  <link rel="stylesheet" href="style-resets.css">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Import fonts -->
-  <link rel="stylesheet" href="fonts/webfont/opensans.css">
-</head>
-<body class="scrollable">
-  <header>
-    <div class="logo">Logo</div>
-    <button id="theme-toggle">Toggle Theme</button>
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Layout</title>
+    <!-- Import fonts -->
+    <link rel="stylesheet" href="fonts/webfont/opensans.css">
+    <!-- Preload fonts -->
+    <link rel="preload" href="fonts/webfont/OpenSans.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="fonts/webfont/OpenSans-Bold.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="fonts/webfont/OpenSans-Light.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="fonts/webfont/OpenSans-Italic.woff2" as="font" type="font/woff2">
+    <!-- Import CSS files -->
+    <link rel="stylesheet" href="style-resets.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Preload script -->
+    <link rel="preload" href="script.js" as="script">
+  </head>
 
-  <main>
-    <h1>Heading 1</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+  <body class="scrollable">
+    <header>
+      <div class="logo">Logo</div>
+      <button id="theme-toggle">Toggle Theme</button>
+    </header>
 
-    <h2>Heading 2</h2>
-    <p>Praesent fermentum velit at diam maximus varius. Pellentesque at diam ornare, malesuada leo consectetur, accumsan orci. Ut sodales auctor erat ut sodales. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vestibulum erat id leo laoreet, eu feugiat diam fringilla. Ut malesuada auctor eros, vel interdum nunc. In convallis, tortor at lobortis lacinia, velit risus interdum mauris, et molestie lacus justo nec nibh. Praesent dictum augue semper venenatis egestas. Etiam est nulla, egestas quis laoreet a, ultrices vel felis. Nullam eu tincidunt massa.</p>
+    <main>
+      <h1>Heading 1</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
 
-    <h3>Heading 3</h3>
-    <p>He aquí un texto en español para probar la compatibilidad de la fuente. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+      <h2>Heading 2</h2>
+      <p>Praesent fermentum velit at diam maximus varius. Pellentesque at diam ornare, malesuada leo consectetur, accumsan orci. Ut sodales auctor erat ut sodales. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vestibulum erat id leo laoreet, eu feugiat diam fringilla. Ut malesuada auctor eros, vel interdum nunc. In convallis, tortor at lobortis lacinia, velit risus interdum mauris, et molestie lacus justo nec nibh. Praesent dictum augue semper venenatis egestas. Etiam est nulla, egestas quis laoreet a, ultrices vel felis. Nullam eu tincidunt massa.</p>
 
-    <h4>Heading 4</h4>
-    <p>Voici un texte en français pour tester la compatibilité de la police. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+      <h3>Heading 3</h3>
+      <p>He aquí un texto en español para probar la compatibilidad de la fuente. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
 
-    <h5>Heading 5</h5>
-    <p>Hier ist ein Text auf Deutsch, um die Schriftkompatibilität zu testen. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+      <h4>Heading 4</h4>
+      <p>Voici un texte en français pour tester la compatibilité de la police. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
 
-    <h6>Heading 6</h6>
-    <p>这里有一段中文文本，用于测试字体兼容性。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+      <h5>Heading 5</h5>
+      <p>Hier ist ein Text auf Deutsch, um die Schriftkompatibilität zu testen. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
 
-    <p>ここに日本語のテキストがあります。フォントの互換性をテストするためのものです。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus。</p>
+      <h6>Heading 6</h6>
+      <p>这里有一段中文文本，用于测试字体兼容性。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
 
-    <!-- HTML elements for testing CSS -->
-    <h1>HTML Elements</h1>
-    <p>This is a <strong>strong</strong> text and this is an <em>emphasized</em> text.</p>
-    <p>This is a <a href="#">link</a>.</p>
-    <p>This is a <code>code</code> element.</p>
-    <p>This is a <mark>marked</mark> text.</p>
-    <p>This is a <del>deleted</del> text and this is an <ins>inserted</ins> text.</p>
-    <p>This is a <sub>subscript</sub> text and this is a <sup>superscript</sup> text.</p>
-    <blockquote>
-      <p>This is a blockquote.</p>
-    </blockquote>
-    <pre>
-      <code>
-        This is a preformatted text.
-      </code>
-    </pre>
-    <ul>
-      <li>Unordered list item 1</li>
-      <li>Unordered list item 2</li>
-      <li>Unordered list item 3</li>
-    </ul>
-    <ol>
-      <li>Ordered list item 1</li>
-      <li>Ordered list item 2</li>
-      <li>Ordered list item 3</li>
-    </ol>
-    <dl>
-      <dt>Definition term 1</dt>
-      <dd>Definition description 1</dd>
-      <dt>Definition term 2</dt>
-      <dd>Definition description 2</dd>
-    </dl>
-    <table>
-      <thead>
-        <tr>
-          <th>Header 1</th>
-          <th>Header 2</th>
-          <th>Header 3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Data 1</td>
-          <td>Data 2</td>
-          <td>Data 3</td>
-        </tr>
-        <tr>
-          <td>Data 4</td>
-          <td>Data 5</td>
-          <td>Data 6</td>
-        </tr>
-      </tbody>
-    </table>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-      <br>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email">
-      <br>
-      <label for="message">Message:</label>
-      <textarea id="message" name="message"></textarea>
-      <br>
-      <label for="dropdown">Dropdown:</label>
-      <select id="dropdown" name="dropdown">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </select>
-      <br>
-      <label for="checkbox">Checkbox:</label>
-      <input type="checkbox" id="checkbox" name="checkbox">
-      <br>
-      <label for="radio1">Radio 1:</label>
-      <input type="radio" id="radio1" name="radio">
-      <br>
-      <label for="radio2">Radio 2:</label>
-      <input type="radio" id="radio2" name="radio">
-      <br>
-      <input type="submit" value="Submit">
-    </form>
-    <button>Button</button>
+      <p>ここに日本語のテキストがあります。フォントの互換性をテストするためのものです。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus。</p>
 
-    <div class="scrollable demo-scroll">
-      <p>这是一个用于测试字体兼容性的中文文本。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
-      <p>Это текст на русском языке для проверки совместимости шрифтов. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
-      <p>이것은 글꼴 호환성을 테스트하기 위한 한국어 텍스트입니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
-      <p>Este é um texto em português para testar a compatibilidade da fonte. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
-      <p>यह फ़ॉन्ट संगतता का परीक्षण करने के लिए हिंदी में एक पाठ है। Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
-      <p>Dies ist ein Text auf Deutsch, um die Schriftkompatibilität zu testen. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
-    </div>
-  </main>
+      <!-- HTML elements for testing CSS -->
+      <h1>HTML Elements</h1>
+      <p>This is a <strong>strong</strong> text and this is an <em>emphasized</em> text.</p>
+      <p>This is a <a href="#">link</a>.</p>
+      <p>This is a <code>code</code> element.</p>
+      <p>This is a <mark>marked</mark> text.</p>
+      <p>This is a <del>deleted</del> text and this is an <ins>inserted</ins> text.</p>
+      <p>This is a <sub>subscript</sub> text and this is a <sup>superscript</sup> text.</p>
+      <blockquote>
+        <p>This is a blockquote.</p>
+      </blockquote>
+      <pre>
+        <code>
+          This is a preformatted text.
+        </code>
+      </pre>
+      <ul>
+        <li>Unordered list item 1</li>
+        <li>Unordered list item 2</li>
+        <li>Unordered list item 3</li>
+      </ul>
+      <ol>
+        <li>Ordered list item 1</li>
+        <li>Ordered list item 2</li>
+        <li>Ordered list item 3</li>
+      </ol>
+      <dl>
+        <dt>Definition term 1</dt>
+        <dd>Definition description 1</dd>
+        <dt>Definition term 2</dt>
+        <dd>Definition description 2</dd>
+      </dl>
+      <table>
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+          </tr>
+          <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+          </tr>
+        </tbody>
+      </table>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea>
+        <br>
+        <label for="dropdown">Dropdown:</label>
+        <select id="dropdown" name="dropdown">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        <br>
+        <label for="checkbox">Checkbox:</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <br>
+        <label for="radio1">Radio 1:</label>
+        <input type="radio" id="radio1" name="radio">
+        <br>
+        <label for="radio2">Radio 2:</label>
+        <input type="radio" id="radio2" name="radio">
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+      <button>Button</button>
 
-  <footer>
-    <nav>
-      <button>Home</button>
-      <button>About</button>
-      <button>Contact</button>
-    </nav>
-  </footer>
-  <script src="script.js"></script>
-</body>
+      <div class="scrollable demo-scroll">
+        <p>这是一个用于测试字体兼容性的中文文本。Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+        <p>Это текст на русском языке для проверки совместимости шрифтов. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+        <p>이것은 글꼴 호환성을 테스트하기 위한 한국어 텍스트입니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+        <p>Este é um texto em português para testar a compatibilidade da fonte. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+        <p>यह फ़ॉन्ट संगतता का परीक्षण करने के लिए हिंदी में एक पाठ है। Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+        <p>Dies ist ein Text auf Deutsch, um die Schriftkompatibilität zu testen. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a congue neque, at tempus massa. Curabitur cursus odio id fermentum ornare. In finibus eget est non sagittis. Suspendisse in dolor et purus lacinia finibus. Phasellus porttitor, metus in maximus consectetur, leo velit finibus dolor, nec lobortis libero turpis eu ante. Nulla vitae porta nisi. Cras aliquet, lorem quis pulvinar faucibus, justo ipsum auctor enim, eget blandit sapien dui ut metus.</p>
+      </div>
+    </main>
+
+    <footer>
+      <nav>
+        <button>Home</button>
+        <button>About</button>
+        <button>Contact</button>
+      </nav>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

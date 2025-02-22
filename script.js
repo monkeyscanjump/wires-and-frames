@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add custom scrollbar for OS other than Android, iPhone, iPad, iPod, Macintosh, Mac OS X
   // Requires class 'scrollable' to be added to the element.
   const userAgent = navigator.userAgent.toLowerCase();
+  console.log('User Agent:', userAgent);
   if (!/android|iphone|ipad|ipod|macintosh|mac os x/.test(userAgent)) {
     document.querySelectorAll('.scrollable').forEach(element => {
       element.classList.add('custom-scrollbar');
