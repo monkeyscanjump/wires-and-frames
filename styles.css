@@ -1,0 +1,92 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Font1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Font2&display=swap');
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Font1', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header, footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+  margin-top: auto;
+  flex-direction: column;
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+main {
+  padding: 1em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom webkit scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-color);
+}
+
+/* Light theme */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --scrollbar-track-color: #f1f1f1;
+  --scrollbar-thumb-color: #888;
+  --scrollbar-thumb-hover-color: #555;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --scrollbar-track-color: #333;
+  --scrollbar-thumb-color: #555;
+  --scrollbar-thumb-hover-color: #888;
+}
