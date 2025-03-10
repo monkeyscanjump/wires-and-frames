@@ -181,7 +181,6 @@ footer a {
 }
 
 .side-item-content {
-  margin-top: var(--content-gutter);
   flex-grow: 1;
   background: var(--text-color);
   color: var(--background-color);
@@ -243,15 +242,16 @@ footer a {
 .account-details-wrapper {
   position: sticky;
   top: var(--header-height);
+  padding-top: var(--content-gutter);
 }
 
 .account-details {
-  padding: var(--content-gutter);
+  padding: 0 var(--content-gutter) var(--content-gutter);
   flex-grow: 1;
   border-radius: 0 var(--border-radius) var(--border-radius) var(--border-radius);
 }
 
-.account-details > div:not(:first-of-type) {
+.account-details-wrapper > div:not(:first-of-type) {
   margin-top: var(--content-gutter);
 }
 
