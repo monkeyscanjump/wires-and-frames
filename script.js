@@ -19,4 +19,25 @@ document.addEventListener('DOMContentLoaded', () => {
       element.classList.add('custom-scrollbar');
     });
   }
+
+  // Process all account addresses
+  document.querySelectorAll('.account-address').forEach(function(element) {
+    const fullAddress = element.getAttribute('data-value');
+    const maxLength = 32; // Total visible characters
+
+    if (fullAddress.length <= maxLength) {
+      element.setAttribute('data-truncated', fullAddress);
+    } else {
+      // Calculate how many characters to show at beginning and end
+      const frontChars = Math.ceil(maxLength / 2) - 1;
+      const endChars = Math.floor(maxLength / 2) - 2;
+
+      const truncated =
+        fullAddress.substring(0, frontChars) +
+        '...' +
+        fullAddress.substring(fullAddress.length - endChars);
+
+      element.setAttribute('data-truncated', truncated);
+    }
+  });
 });

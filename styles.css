@@ -7,6 +7,12 @@
   --scrollbar-thumb-hover-color: #555;
 
   --webfont-family: 'Open Sans', sans-serif;
+
+  --content-gutter: 20px;
+  --content-gutter-half: calc(var(--content-gutter) / 2);
+  --border-radius: 6px;
+
+  --header-height: 61px;
 }
 
 /* Dark theme */
@@ -16,6 +22,12 @@
   --scrollbar-track-color: #333;
   --scrollbar-thumb-color: #555;
   --scrollbar-thumb-hover-color: #888;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -29,6 +41,7 @@ body {
   font-family: var(--webfont-family);
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -72,16 +85,45 @@ header, footer {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 1em 0;
   position: sticky;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 }
 
 header {
   top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--content-gutter);
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: var(--content-gutter);
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: var(--content-gutter);
+}
+
+h4 {
+  font-size: 1.2em;
+  margin-bottom: var(--content-gutter);
+}
+
+ul {
+  padding-left: var(--content-gutter);
 }
 
 footer {
@@ -93,19 +135,144 @@ footer {
 footer nav {
   display: flex;
   justify-content: center;
-  gap: 1em;
-  margin-bottom: 1em;
+  gap: var(--content-gutter);
+  padding: var(--content-gutter);
 }
 
 main {
-  padding: 1em;
+  padding: var(--content-gutter);
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.pagewidth {
+  width: 100%;
+  max-width: 80rem;
 }
 
 .scrollable.demo-scroll {
   overflow-y: auto;
   max-height: 100px;
   margin: 1em 0;
+}
+
+footer a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+
+.side-by-side-container {
+  display: flex;
+  gap: var(--content-gutter);
+  margin-top: var(--content-gutter);
+  flex-grow: 1;
+}
+
+.no-gap {
+  gap: 0;
+}
+
+.side-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;;
+}
+
+.side-item-content {
+  margin-top: var(--content-gutter);
+  flex-grow: 1;
+  background: var(--text-color);
+  color: var(--background-color);
+  border-radius: var(--border-radius);
+}
+
+.multisig-account {
+  margin: var(--content-gutter);
+  background: var(--scrollbar-track-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  padding: var(--content-gutter-half);
+}
+
+.account {
+  flex-shrink: 0;
+}
+
+.account-address {
+  display: block;
+  max-width: 100%;
+  font-family: monospace;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.accounts-list {
+  flex: 0 0 25%;
+}
+
+/* Show the truncated version */
+.account-address::before {
+  content: attr(data-truncated);
+  white-space: nowrap;
+}
+
+.account.selected,
+.account-details,
+.accounts-account-list-container {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+.account {
+  padding: var(--content-gutter);
+  cursor: pointer;
+}
+
+.account:not(.selected):hover {
+  background: var(--scrollbar-track-color);
+}
+
+.account {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.account-details-wrapper {
+  position: sticky;
+  top: var(--header-height);
+}
+
+.account-details {
+  padding: var(--content-gutter);
+  flex-grow: 1;
+  border-radius: 0 var(--border-radius) var(--border-radius) var(--border-radius);
+}
+
+.account-details > div:not(:first-of-type) {
+  margin-top: var(--content-gutter);
+}
+
+.account-balance {
+  margin: var(--content-gutter) 0;
+}
+
+
+/* Accounts list */
+.accounts-account-list-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: var(--content-gutter);
+  padding: var(--content-gutter);
+  border-radius: var(--border-radius);
+}
+
+.account-list-item {
+  padding: var(--content-gutter-half);
+  background: var(--scrollbar-track-color);
+  color: var(--text-color);
+  border-radius: var(--border-radius);
 }

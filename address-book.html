@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Layout</title>
+  <!-- Import fonts -->
+  <link rel="stylesheet" href="fonts/webfont/opensans.css">
+  <!-- Preload fonts -->
+  <link rel="preload" href="fonts/webfont/OpenSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/webfont/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/webfont/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/webfont/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- Import CSS files -->
+  <link rel="stylesheet" href="style-resets.css">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Preload script -->
+  <link rel="preload" href="script.js" as="script">
+</head>
+
+<body class="scrollable">
+  <header>
+    <div class="header-wrapper pagewidth">
+      <div class="logo">Logo</div>
+      <button id="theme-toggle">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main class="address-book-page pagewidth">
+    <h2>Address Book</h2>
+    <div class="accounts-account-list-container">
+      <button style="width: 200px; height: 40px;">+ Add contact</button>
+      <div class="account-list-item">
+        <p class="account-name">Demo account</p>
+        <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+        <div>
+          <p>Free: <span>0.0000 C</span></p>
+          <p>Staked: <span>0.0000 C</span></p>
+        </div>
+        <div>
+          <button>Copy</button>
+          <button>Remove</button>
+          <button>Edit</button>
+        </div>
+      </div>
+      <div class="account-list-item">
+        <p class="account-name">Demo account</p>
+        <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+        <div>
+          <p>Free: <span>0.0000 C</span></p>
+          <p>Staked: <span>0.0000 C</span></p>
+        </div>
+        <div>
+          <button>Copy</button>
+          <button>Remove</button>
+          <button>Edit</button>
+        </div>
+      </div>
+      <div class="account-list-item">
+        <p class="account-name">Demo account</p>
+        <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+        <div>
+          <p>Free: <span>0.0000 C</span></p>
+          <p>Staked: <span>0.0000 C</span></p>
+        </div>
+        <div>
+          <button>Copy</button>
+          <button>Remove</button>
+          <button>Edit</button>
+        </div>
+      </div>
+      <div class="account-list-item">
+        <p class="account-name">Demo account</p>
+        <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+        <div>
+          <p>Free: <span>0.0000 C</span></p>
+          <p>Staked: <span>0.0000 C</span></p>
+        </div>
+        <div>
+          <button>Copy</button>
+          <button>Remove</button>
+          <button>Edit</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <nav>
+      <a href="new-multisig.html">New Multisig</a>
+      <a href="multisig-accounts.html">Multisig Accounts</a>
+      <a href="accounts.html">Accounts</a>
+      <a href="address-book.html">Address Book</a>
+      <a href="extrinsics.html">Extrinsics</a>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
