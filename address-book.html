@@ -18,18 +18,82 @@
   <link rel="preload" href="script.js" as="script">
 </head>
 
-<body class="scrollable">
+<body>
   <header>
     <div class="header-wrapper pagewidth">
-      <div class="logo"><a href="index.html">Logo</a></div>
-      <button id="theme-toggle">Toggle Theme</button>
+      <div class="logo">
+        <a href="index.html">Logo</a>
+      </div>
+      <div class="navigation">
+        <nav>
+          <a href="new-multisig.html">New Multisig</a>
+          <a href="multisig-accounts.html">Multisig Accounts</a>
+          <a href="accounts.html">Accounts</a>
+          <a class="selected" href="address-book.html">Address Book</a>
+          <a href="extrinsics.html">Extrinsics</a>
+        </nav>
+      </div>
+      <div class="options">
+        <button id="theme-toggle">Toggle Theme</button>
+      </div>
     </div>
   </header>
 
   <main class="address-book-page pagewidth">
-    <h2>Address Book</h2>
-    <div class="accounts-account-list-container">
+    <div class="accounts-account-list-container scrollable">
       <button style="width: 200px; height: 40px;">+ Add contact</button>
+      <div class="account-list-item">
+        <p class="account-name">Demo account</p>
+        <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+        <div>
+          <p>Free: <span>0.0000 C</span></p>
+          <p>Staked: <span>0.0000 C</span></p>
+        </div>
+        <div>
+          <button>Copy</button>
+          <button>Remove</button>
+          <button>Edit</button>
+        </div>
+      </div>
+      <div class="account-list-item">
+        <p class="account-name">Demo account</p>
+        <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+        <div>
+          <p>Free: <span>0.0000 C</span></p>
+          <p>Staked: <span>0.0000 C</span></p>
+        </div>
+        <div>
+          <button>Copy</button>
+          <button>Remove</button>
+          <button>Edit</button>
+        </div>
+      </div>
+      <div class="account-list-item">
+        <p class="account-name">Demo account</p>
+        <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+        <div>
+          <p>Free: <span>0.0000 C</span></p>
+          <p>Staked: <span>0.0000 C</span></p>
+        </div>
+        <div>
+          <button>Copy</button>
+          <button>Remove</button>
+          <button>Edit</button>
+        </div>
+      </div>
+      <div class="account-list-item">
+        <p class="account-name">Demo account</p>
+        <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+        <div>
+          <p>Free: <span>0.0000 C</span></p>
+          <p>Staked: <span>0.0000 C</span></p>
+        </div>
+        <div>
+          <button>Copy</button>
+          <button>Remove</button>
+          <button>Edit</button>
+        </div>
+      </div>
       <div class="account-list-item">
         <p class="account-name">Demo account</p>
         <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
@@ -85,15 +149,15 @@
     </div>
   </main>
 
-  <footer>
+  <!-- <footer>
     <nav>
       <a href="new-multisig.html">New Multisig</a>
       <a href="multisig-accounts.html">Multisig Accounts</a>
       <a href="accounts.html">Accounts</a>
-      <a href="address-book.html">Address Book</a>
+      <a class="selected" href="address-book.html">Address Book</a>
       <a href="extrinsics.html">Extrinsics</a>
     </nav>
-  </footer>
+  </footer> -->
 
   <script src="script.js"></script>
 </body>

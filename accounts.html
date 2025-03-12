@@ -18,17 +18,29 @@
   <link rel="preload" href="script.js" as="script">
 </head>
 
-<body class="scrollable">
+<body>
   <header>
     <div class="header-wrapper pagewidth">
-      <div class="logo"><a href="index.html">Logo</a></div>
-      <button id="theme-toggle">Toggle Theme</button>
+      <div class="logo">
+        <a href="index.html">Logo</a>
+      </div>
+      <div class="navigation">
+        <nav>
+          <a href="new-multisig.html">New Multisig</a>
+          <a href="multisig-accounts.html">Multisig Accounts</a>
+          <a class="selected" href="accounts.html">Accounts</a>
+          <a href="address-book.html">Address Book</a>
+          <a href="extrinsics.html">Extrinsics</a>
+        </nav>
+      </div>
+      <div class="options">
+        <button id="theme-toggle">Toggle Theme</button>
+      </div>
     </div>
   </header>
 
   <main class="accounts-page pagewidth">
-    <h2>Accounts</h2>
-    <div class="accounts-account-list-container">
+    <div class="accounts-account-list-container scrollable">
       <div class="account-list-item">
         <p class="account-name">Demo account</p>
         <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
@@ -200,15 +212,15 @@
     </div>
   </main>
 
-  <footer>
+  <!-- <footer>
     <nav>
       <a href="new-multisig.html">New Multisig</a>
       <a href="multisig-accounts.html">Multisig Accounts</a>
-      <a href="accounts.html">Accounts</a>
+      <a class="selected" href="accounts.html">Accounts</a>
       <a href="address-book.html">Address Book</a>
       <a href="extrinsics.html">Extrinsics</a>
     </nav>
-  </footer>
+  </footer> -->
 
   <script src="script.js"></script>
 </body>

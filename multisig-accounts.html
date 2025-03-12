@@ -18,18 +18,30 @@
   <link rel="preload" href="script.js" as="script">
 </head>
 
-<body class="scrollable">
+<body>
   <header>
     <div class="header-wrapper pagewidth">
-      <div class="logo"><a href="index.html">Logo</a></div>
-      <button id="theme-toggle">Toggle Theme</button>
+      <div class="logo">
+        <a href="index.html">Logo</a>
+      </div>
+      <div class="navigation">
+        <nav>
+          <a href="new-multisig.html">New Multisig</a>
+          <a class="selected" href="multisig-accounts.html">Multisig Accounts</a>
+          <a href="accounts.html">Accounts</a>
+          <a href="address-book.html">Address Book</a>
+          <a href="extrinsics.html">Extrinsics</a>
+        </nav>
+      </div>
+      <div class="options">
+        <button id="theme-toggle">Toggle Theme</button>
+      </div>
     </div>
   </header>
 
   <main class="multisig-accounts-page pagewidth">
-    <h2>Multisignatures</h2>
-    <div class="side-by-side-container no-gap">
-      <div class="side-by-side accounts-list">
+    <div class="side-by-side-container">
+      <div class="side-by-side accounts-list scrollable">
         <div class="account selected">
           <h3>Demo Account</h3>
           <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
@@ -71,10 +83,10 @@
           <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
         </div>
       </div>
-      <div class="side-by-side account-details">
+      <div class="side-by-side account-details scrollable">
         <div class="account-details-wrapper">
           <div class="account-details-header">
-            <!-- <h3>Demo account</h3> -->
+            <h3>Demo account</h3>
             <h4>5GHjMgGkydmNStMAK6giDCjHB1h4fHBh9N1N6ejTJ8C3YDqSP</h4>
             <div class="account-balance">
               <p>Free: <span>0.0000 C</span></p>
@@ -89,6 +101,26 @@
             <ul>
               <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account1</li>
               <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account2</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account3</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account4</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account5</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account6</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account7</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account8</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account9</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account10</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account11</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account12</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account13</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account14</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account15</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account16</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account17</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account18</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account19</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account20</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account21</li>
+              <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account22</li>
             </ul>
           </div>
           <div class="account-details-approvals">
@@ -99,15 +131,15 @@
     </div>
   </main>
 
-  <footer>
+  <!-- <footer>
     <nav>
       <a href="new-multisig.html">New Multisig</a>
-      <a href="multisig-accounts.html">Multisig Accounts</a>
+      <a class="selected" href="multisig-accounts.html">Multisig Accounts</a>
       <a href="accounts.html">Accounts</a>
       <a href="address-book.html">Address Book</a>
       <a href="extrinsics.html">Extrinsics</a>
     </nav>
-  </footer>
+  </footer> -->
 
   <script src="script.js"></script>
 </body>

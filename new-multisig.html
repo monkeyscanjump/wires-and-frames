@@ -18,16 +18,28 @@
   <link rel="preload" href="script.js" as="script">
 </head>
 
-<body class="scrollable">
+<body>
   <header>
     <div class="header-wrapper pagewidth">
-      <div class="logo"><a href="index.html">Logo</a></div>
-      <button id="theme-toggle">Toggle Theme</button>
+      <div class="logo">
+        <a href="index.html">Logo</a>
+      </div>
+      <div class="navigation">
+        <nav>
+          <a class="selected" href="new-multisig.html">New Multisig</a>
+          <a href="multisig-accounts.html">Multisig Accounts</a>
+          <a href="accounts.html">Accounts</a>
+          <a href="address-book.html">Address Book</a>
+          <a href="extrinsics.html">Extrinsics</a>
+        </nav>
+      </div>
+      <div class="options">
+        <button id="theme-toggle">Toggle Theme</button>
+      </div>
     </div>
   </header>
 
   <main class="new-multisig-page pagewidth">
-    <h2>New Multisig</h2>
     <div class="input-group">
       <label for="threshold">Threshold (2/0)</label>
       <input type="text" id="threshold" placeholder="2">
@@ -38,7 +50,7 @@
     <div class="side-by-side-container">
       <div class="side-item">
         <h3>Available signatories (3)</h3>
-        <div class="side-item-content">
+        <div class="side-item-content scrollable">
           <div class="multisig-account">
             <h4>Demo Account</h4>
             <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
@@ -79,20 +91,20 @@
       </div>
       <div class="side-item">
         <h3>Selected signatories (0)</h3>
-        <div class="side-item-content"></div>
+        <div class="side-item-content scrollable"></div>
       </div>
     </div>
   </main>
 
-  <footer>
+  <!-- <footer>
     <nav>
-      <a href="new-multisig.html">New Multisig</a>
+      <a class="selected" href="new-multisig.html">New Multisig</a>
       <a href="multisig-accounts.html">Multisig Accounts</a>
       <a href="accounts.html">Accounts</a>
       <a href="address-book.html">Address Book</a>
       <a href="extrinsics.html">Extrinsics</a>
     </nav>
-  </footer>
+  </footer> -->
 
   <script src="script.js"></script>
 </body>
