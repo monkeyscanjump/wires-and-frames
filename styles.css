@@ -1,6 +1,6 @@
-/* Light theme */
 :root {
-  --background-color: #ffffff;
+  --background-color: rgba(238,234,231,1);
+  --background-color-secondary: rgba(255,255,255,1);
   --text-color: #000000;
   --scrollbar-track-color: #f1f1f1;
   --scrollbar-thumb-color: #888;
@@ -13,15 +13,30 @@
   --border-radius: 6px;
 
   --header-height: 61px;
+
+  /* Nav theming variables */
+  --nav-hover-bg: rgba(0, 0, 0, 0.05);
+  --nav-selected-bg: rgba(0, 0, 0, 0.08);
+  --nav-selected-shadow-primary: rgba(0, 0, 0, 0.1);
+  --nav-selected-shadow-secondary: rgba(0, 0, 0, 0.1);
+  --nav-selected-border: rgba(0, 0, 0, 0.1);
 }
 
 /* Dark theme */
 [data-theme="dark"] {
-  --background-color: #000000;
+  --background-color: rgba(12,17,28,1);
+  --background-color-secondary: rgba(53,65,97,1);
   --text-color: #ffffff;
   --scrollbar-track-color: #333;
   --scrollbar-thumb-color: #555;
   --scrollbar-thumb-hover-color: #888;
+
+  /* Nav theming variables for dark theme */
+  --nav-hover-bg: rgba(255, 255, 255, 0.05);
+  --nav-selected-bg: #212941;
+  --nav-selected-shadow-primary: rgba(0, 0, 0, 0.2);
+  --nav-selected-shadow-secondary: rgba(0, 0, 0, 0.2);
+  --nav-selected-border: #1a2135;
 }
 
 *,
@@ -44,7 +59,7 @@ body {
   align-items: center;
   height: 100%;
   overflow: hidden;
-  background-color: var(--background-color);
+  background: linear-gradient(184deg, var(--background-color) 0%, var(--background-color-secondary) 100%);
   color: var(--text-color);
 }
 
@@ -81,8 +96,7 @@ i, em {
 }
 
 header, footer {
-  background-color: var(--text-color);
-  color: var(--background-color);
+  color: var(--text-color);
   text-align: center;
   position: sticky;
   width: 100%;
@@ -103,7 +117,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--content-gutter);
+  padding: var(--content-gutter-half) var(--content-gutter);
 }
 
 a {
@@ -132,8 +146,8 @@ ul {
 }
 
 footer {
-  bottom: 0;
-  margin-top: auto;
+  font-size: 0.8em;
+  padding: var(--content-gutter-half) var(--content-gutter);
   flex-direction: column;
 }
 
@@ -141,25 +155,43 @@ nav {
   display: flex;
   justify-content: center;
   gap: var(--content-gutter-half);
-  padding: 0 var(--content-gutter);
+  padding: var(--content-gutter-half) var(--content-gutter);
 }
 
 nav a {
   color: var(--text-color);
-  padding: var(--content-gutter) var(--content-gutter-half);
+  padding: var(--content-gutter-half) var(--content-gutter);
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
 }
 
-nav a.selected {
-  background: var(--background-color);
+nav a:hover:not(.selected) {
+  background: var(--nav-hover-bg);
+}
+
+nav a.selected,
+.content {
+  border-radius: var(--border-radius);
+  background: var(--background-color-secondary);
   color: var(--text-color);
   text-decoration: none;
+  box-shadow:
+    inset 0 2px 6px var(--nav-selected-shadow-primary),
+    inset 0 0 3px var(--nav-selected-shadow-secondary),
+    inset 0 0 3px rgba(0, 0, 0, 0.12);
 }
 
 main {
-  padding: var(--content-gutter);
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  padding: 0 var(--content-gutter);
+}
+
+.content {
+  padding: var(--content-gutter);
+  flex-grow: 1;
   overflow: hidden;
 }
 
@@ -209,17 +241,12 @@ footer a {
 
 .side-item-content {
   flex-grow: 1;
-  background: var(--text-color);
-  color: var(--background-color);
   border-radius: var(--border-radius);
 }
 
 .multisig-account {
   margin: var(--content-gutter);
-  background: var(--scrollbar-track-color);
-  color: var(--text-color);
   border-radius: var(--border-radius);
-  padding: var(--content-gutter-half);
 }
 
 .account {
@@ -249,12 +276,9 @@ footer a {
 .account.selected,
 .account-details,
 .accounts-account-list-container {
-  background: var(--text-color);
-  color: var(--background-color);
 }
 
 .account {
-  padding: var(--content-gutter);
   cursor: pointer;
 }
 
@@ -267,7 +291,6 @@ footer a {
 }
 
 .account-details {
-  padding: var(--content-gutter);
   flex-grow: 1;
   border-radius: 0 var(--border-radius) var(--border-radius) var(--border-radius);
 }
@@ -287,12 +310,10 @@ footer a {
   flex-grow: 1;
   flex-direction: column;
   gap: var(--content-gutter);
-  padding: var(--content-gutter);
   border-radius: var(--border-radius);
 }
 
 .account-list-item {
-  padding: var(--content-gutter-half);
   background: var(--scrollbar-track-color);
   color: var(--text-color);
   border-radius: var(--border-radius);
