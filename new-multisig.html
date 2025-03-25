@@ -34,20 +34,31 @@
         </nav>
       </div>
       <div class="options">
-        <button id="theme-toggle">Toggle Theme</button>
+        <div class="theme-toggle-wrapper">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <span class="toggle-track">
+              <span class="toggle-indicator"></span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="new-multisig-page pagewidth">
-    <div class="content">
-      <div class="input-group">
-        <label for="threshold">Threshold (2/0)</label>
-        <input type="text" id="threshold" placeholder="2">
-        <label for="multisig-name">Name</label>
-        <input type="text" id="multisig-name" placeholder="Multisig name">
+  <main class="new-multisig-page">
+    <div class="page-header">
+      <div class="pagewidth header-container">
+        <h3>Create a new multisig account</h3>
+        <div class="input-group">
+          <label for="threshold">Threshold (2/0)</label>
+          <input type="text" id="threshold" placeholder="2">
+          <label for="multisig-name">Name</label>
+          <input type="text" id="multisig-name" placeholder="Multisig name">
+        </div>
+        <button class="button-secondary">+ Add Multisig</button>
       </div>
-
+    </div>
+    <div class="content pagewidth">
       <div class="side-by-side-container">
         <div class="side-item">
           <h3>Available signatories (3)</h3>

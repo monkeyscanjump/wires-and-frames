@@ -34,13 +34,19 @@
         </nav>
       </div>
       <div class="options">
-        <button id="theme-toggle">Toggle Theme</button>
+        <div class="theme-toggle-wrapper">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <span class="toggle-track">
+              <span class="toggle-indicator"></span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="accounts-page pagewidth">
-    <div class="content">
+  <main class="accounts-page">
+    <div class="content pagewidth">
       <div class="accounts-account-list-container scrollable">
         <div class="account-list-item">
           <p class="account-name">Demo account</p>
