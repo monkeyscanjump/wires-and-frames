@@ -208,7 +208,7 @@ footer a {
 
 .page-header {
   margin-top: var(--content-gutter-half);
-  padding: var(--content-gutter);
+  padding: var(--content-gutter) 0;
   background: var(--background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -218,6 +218,7 @@ footer a {
   justify-content: space-between;
   align-items: center;
   margin: auto;
+  padding: 0 var(--content-gutter);
 }
 
 .page-header h3 {
