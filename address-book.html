@@ -1,171 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Layout</title>
-  <!-- Import fonts -->
-  <link rel="stylesheet" href="fonts/webfont/opensans.css">
-  <!-- Preload fonts -->
-  <link rel="preload" href="fonts/webfont/OpenSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/webfont/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/webfont/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/webfont/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <!-- Import CSS files -->
-  <link rel="stylesheet" href="style-resets.css">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Preload script -->
-  <link rel="preload" href="script.js" as="script">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Layout</title>
+    <!-- Import fonts -->
+    <link rel="stylesheet" href="fonts/webfont/opensans.css">
+    <!-- Preload fonts -->
+    <link rel="preload" href="fonts/webfont/OpenSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/webfont/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/webfont/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/webfont/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/icons/fonts/icomoon.woff" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Import CSS files -->
+    <link rel="stylesheet" href="style-resets.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts/icons/style.css">
+    <!-- Preload script -->
+    <link rel="preload" href="script.js" as="script">
+  </head>
 
-<body>
-  <header>
-    <div class="header-wrapper pagewidth">
-      <div class="logo">
-        <a href="index.html">Logo</a>
-      </div>
-      <div class="navigation">
-        <nav>
-          <a href="new-multisig.html">New Multisig</a>
-          <a href="multisig-accounts.html">Multisig Accounts</a>
-          <a href="accounts.html">Accounts</a>
-          <a class="selected" href="address-book.html">Address Book</a>
-          <a href="extrinsics.html">Extrinsics</a>
-        </nav>
-      </div>
-      <div class="options">
-        <div class="theme-toggle-wrapper">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-            <span class="toggle-track">
-              <span class="toggle-indicator"></span>
-            </span>
-          </button>
+  <body>
+    <header>
+      <div class="header-wrapper pagewidth">
+        <div class="logo">
+          <a href="index.html">Logo</a>
+        </div>
+        <div class="navigation">
+          <nav>
+            <a href="new-multisig.html"><span class="icon-plus"></span>New Multisig</a>
+            <a href="multisig-accounts.html"><span class="icon-layers"></span>Multisig Accounts</a>
+            <a href="accounts.html"><span class="icon-link"></span>Accounts</a>
+            <a class="selected" href="address-book.html"><span class="icon-book-open"></span>Address Book</a>
+            <a href="extrinsics.html"><span class="icon-activity"></span>Extrinsics</a>
+          </nav>
+        </div>
+        <div class="options">
+          <div class="theme-toggle-wrapper">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+              <span class="toggle-track">
+                <span class="toggle-indicator"></span>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="address-book-page">
-    <div class="page-header">
-      <div class="header-container pagewidth">
-        <h3>Add a new contact address</h3>
-        <button class="button-secondary">+ Add contact</button>
-      </div>
-    </div>
-    <div class="content pagewidth scrollable">
-      <div class="accounts-account-list-container">
-        <div class="account-list-item">
-          <p class="account-name">Demo account</p>
-          <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
-          <div>
-            <p>Free: <span>0.0000 C</span></p>
-            <p>Staked: <span>0.0000 C</span></p>
-          </div>
-          <div>
-            <button>Copy</button>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
-        </div>
-        <div class="account-list-item">
-          <p class="account-name">Demo account</p>
-          <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
-          <div>
-            <p>Free: <span>0.0000 C</span></p>
-            <p>Staked: <span>0.0000 C</span></p>
-          </div>
-          <div>
-            <button>Copy</button>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
-        </div>
-        <div class="account-list-item">
-          <p class="account-name">Demo account</p>
-          <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
-          <div>
-            <p>Free: <span>0.0000 C</span></p>
-            <p>Staked: <span>0.0000 C</span></p>
-          </div>
-          <div>
-            <button>Copy</button>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
-        </div>
-        <div class="account-list-item">
-          <p class="account-name">Demo account</p>
-          <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
-          <div>
-            <p>Free: <span>0.0000 C</span></p>
-            <p>Staked: <span>0.0000 C</span></p>
-          </div>
-          <div>
-            <button>Copy</button>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
-        </div>
-        <div class="account-list-item">
-          <p class="account-name">Demo account</p>
-          <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
-          <div>
-            <p>Free: <span>0.0000 C</span></p>
-            <p>Staked: <span>0.0000 C</span></p>
-          </div>
-          <div>
-            <button>Copy</button>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
-        </div>
-        <div class="account-list-item">
-          <p class="account-name">Demo account</p>
-          <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
-          <div>
-            <p>Free: <span>0.0000 C</span></p>
-            <p>Staked: <span>0.0000 C</span></p>
-          </div>
-          <div>
-            <button>Copy</button>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
-        </div>
-        <div class="account-list-item">
-          <p class="account-name">Demo account</p>
-          <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
-          <div>
-            <p>Free: <span>0.0000 C</span></p>
-            <p>Staked: <span>0.0000 C</span></p>
-          </div>
-          <div>
-            <button>Copy</button>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
-        </div>
-        <div class="account-list-item">
-          <p class="account-name">Demo account</p>
-          <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
-          <div>
-            <p>Free: <span>0.0000 C</span></p>
-            <p>Staked: <span>0.0000 C</span></p>
-          </div>
-          <div>
-            <button>Copy</button>
-            <button>Remove</button>
-            <button>Edit</button>
-          </div>
+    <main class="address-book-page">
+      <div class="page-header">
+        <div class="header-container pagewidth">
+          <h2>Add a new contact address</h2>
+          <button class="button-primary"><span class="icon-plus"></span> Add contact</button>
         </div>
       </div>
-    </div>
-  </main>
+      <div class="content pagewidth">
+        <div class="accounts-account-list-container scrollable">
+          <div class="account-list-item">
+            <h5 class="account-name">Demo account</h5>
+            <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+            <div>
+              <p>Free: <span>0.0000 C</span></p>
+              <p>Staked: <span>0.0000 C</span></p>
+            </div>
+            <div>
+              <button>Copy</button>
+              <button>Remove</button>
+              <button>Edit</button>
+            </div>
+          </div>
+          <div class="account-list-item">
+            <h5 class="account-name">Demo account</h5>
+            <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+            <div>
+              <p>Free: <span>0.0000 C</span></p>
+              <p>Staked: <span>0.0000 C</span></p>
+            </div>
+            <div>
+              <button>Copy</button>
+              <button>Remove</button>
+              <button>Edit</button>
+            </div>
+          </div>
+          <div class="account-list-item">
+            <h5 class="account-name">Demo account</h5>
+            <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+            <div>
+              <p>Free: <span>0.0000 C</span></p>
+              <p>Staked: <span>0.0000 C</span></p>
+            </div>
+            <div>
+              <button>Copy</button>
+              <button>Remove</button>
+              <button>Edit</button>
+            </div>
+          </div>
+          <div class="account-list-item">
+            <h5 class="account-name">Demo account</h5>
+            <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+            <div>
+              <p>Free: <span>0.0000 C</span></p>
+              <p>Staked: <span>0.0000 C</span></p>
+            </div>
+            <div>
+              <button>Copy</button>
+              <button>Remove</button>
+              <button>Edit</button>
+            </div>
+          </div>
+          <div class="account-list-item">
+            <h5 class="account-name">Demo account</h5>
+            <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+            <div>
+              <p>Free: <span>0.0000 C</span></p>
+              <p>Staked: <span>0.0000 C</span></p>
+            </div>
+            <div>
+              <button>Copy</button>
+              <button>Remove</button>
+              <button>Edit</button>
+            </div>
+          </div>
+          <div class="account-list-item">
+            <h5 class="account-name">Demo account</h5>
+            <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+            <div>
+              <p>Free: <span>0.0000 C</span></p>
+              <p>Staked: <span>0.0000 C</span></p>
+            </div>
+            <div>
+              <button>Copy</button>
+              <button>Remove</button>
+              <button>Edit</button>
+            </div>
+          </div>
+          <div class="account-list-item">
+            <h5 class="account-name">Demo account</h5>
+            <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+            <div>
+              <p>Free: <span>0.0000 C</span></p>
+              <p>Staked: <span>0.0000 C</span></p>
+            </div>
+            <div>
+              <button>Copy</button>
+              <button>Remove</button>
+              <button>Edit</button>
+            </div>
+          </div>
+          <div class="account-list-item">
+            <h5 class="account-name">Demo account</h5>
+            <p class="account-address">5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP</p>
+            <div>
+              <p>Free: <span>0.0000 C</span></p>
+              <p>Staked: <span>0.0000 C</span></p>
+            </div>
+            <div>
+              <button>Copy</button>
+              <button>Remove</button>
+              <button>Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  <footer>
-    <span>Secure Sign | Tenet Labs</span>
-  </footer>
+    <footer>
+      <span>Secure Sign | Tenet Labs</span>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

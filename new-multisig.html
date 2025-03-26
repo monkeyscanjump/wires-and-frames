@@ -1,118 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Layout</title>
-  <!-- Import fonts -->
-  <link rel="stylesheet" href="fonts/webfont/opensans.css">
-  <!-- Preload fonts -->
-  <link rel="preload" href="fonts/webfont/OpenSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/webfont/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/webfont/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/webfont/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <!-- Import CSS files -->
-  <link rel="stylesheet" href="style-resets.css">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Preload script -->
-  <link rel="preload" href="script.js" as="script">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Layout</title>
+    <!-- Import fonts -->
+    <link rel="stylesheet" href="fonts/webfont/opensans.css">
+    <!-- Preload fonts -->
+    <link rel="preload" href="fonts/webfont/OpenSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/webfont/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/webfont/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/webfont/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/icons/fonts/icomoon.woff" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- Import CSS files -->
+    <link rel="stylesheet" href="style-resets.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts/icons/style.css">
+    <!-- Preload script -->
+    <link rel="preload" href="script.js" as="script">
+  </head>
 
-<body>
-  <header>
-    <div class="header-wrapper pagewidth">
-      <div class="logo">
-        <a href="index.html">Logo</a>
-      </div>
-      <div class="navigation">
-        <nav>
-          <a class="selected" href="new-multisig.html">New Multisig</a>
-          <a href="multisig-accounts.html">Multisig Accounts</a>
-          <a href="accounts.html">Accounts</a>
-          <a href="address-book.html">Address Book</a>
-          <a href="extrinsics.html">Extrinsics</a>
-        </nav>
-      </div>
-      <div class="options">
-        <div class="theme-toggle-wrapper">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
-            <span class="toggle-track">
-              <span class="toggle-indicator"></span>
-            </span>
-          </button>
+  <body>
+    <header>
+      <div class="header-wrapper pagewidth">
+        <div class="logo">
+          <a href="index.html">Logo</a>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="new-multisig-page">
-    <div class="page-header">
-      <div class="pagewidth header-container">
-        <h3>Create a new multisig account</h3>
-        <div class="input-group">
-          <label for="threshold">Threshold (2/0)</label>
-          <input type="text" id="threshold" placeholder="2">
-          <label for="multisig-name">Name</label>
-          <input type="text" id="multisig-name" placeholder="Multisig name">
+        <div class="navigation">
+          <nav>
+            <a class="selected" href="new-multisig.html"><span class="icon-plus"></span>New Multisig</a>
+            <a href="multisig-accounts.html"><span class="icon-layers"></span>Multisig Accounts</a>
+            <a href="accounts.html"><span class="icon-link"></span>Accounts</a>
+            <a href="address-book.html"><span class="icon-book-open"></span>Address Book</a>
+            <a href="extrinsics.html"><span class="icon-activity"></span>Extrinsics</a>
+          </nav>
         </div>
-        <button class="button-secondary">+ Add Multisig</button>
-      </div>
-    </div>
-    <div class="content pagewidth">
-      <div class="side-by-side-container">
-        <div class="side-item">
-          <h3>Available signatories (3)</h3>
-          <div class="side-item-content scrollable">
-            <div class="multisig-account">
-              <h4>Demo Account</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="multisig-account">
-              <h4>Test Account 1</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="multisig-account">
-              <h4>Test Account 2</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="multisig-account">
-              <h4>Test Account 3</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="multisig-account">
-              <h4>Test Account 4</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="multisig-account">
-              <h4>Test Account 5</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="multisig-account">
-              <h4>Test Account 6</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="multisig-account">
-              <h4>Test Account 7</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="multisig-account">
-              <h4>Test Account 8</h4>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
+        <div class="options">
+          <div class="theme-toggle-wrapper">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+              <span class="toggle-track">
+                <span class="toggle-indicator"></span>
+              </span>
+            </button>
           </div>
         </div>
-        <div class="side-item">
-          <h3>Selected signatories (0)</h3>
-          <div class="side-item-content scrollable"></div>
+      </div>
+    </header>
+
+    <main class="new-multisig-page">
+      <div class="page-header">
+        <div class="pagewidth header-container">
+          <h2>Create a new multisig</h2>
+          <div class="input-group">
+            <label for="threshold">Threshold (2/0)</label>
+            <input type="text" id="threshold" placeholder="2">
+            <label for="multisig-name">Name</label>
+            <input type="text" id="multisig-name" placeholder="Multisig name">
+          </div>
+          <button class="button-primary"><span class="icon-plus"></span>  Add Multisig</button>
         </div>
       </div>
-    </div>
-  </main>
+      <div class="content pagewidth">
+        <div class="side-by-side-container">
+          <div class="side-item">
+            <h3>Available signatories (3)</h3>
+            <div class="side-item-content scrollable">
+              <div class="multisig-account">
+                <h5>Demo Account</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+              <div class="multisig-account">
+                <h5>Test Account 1</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+              <div class="multisig-account">
+                <h5>Test Account 2</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+              <div class="multisig-account">
+                <h5>Test Account 3</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+              <div class="multisig-account">
+                <h5>Test Account 4</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+              <div class="multisig-account">
+                <h5>Test Account 5</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+              <div class="multisig-account">
+                <h5>Test Account 6</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+              <div class="multisig-account">
+                <h5>Test Account 7</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+              <div class="multisig-account">
+                <h5>Test Account 8</h5>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
+              </div>
+            </div>
+          </div>
+          <div class="side-item">
+            <h3>Selected signatories (0)</h3>
+            <div class="side-item-content scrollable"></div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  <footer>
-    <span>Secure Sign | Tenet Labs</span>
-  </footer>
+    <footer>
+      <span>Secure Sign | Tenet Labs</span>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
