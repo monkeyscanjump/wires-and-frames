@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Layout</title>
+    <title>Multisig Accounts</title>
     <!-- Import fonts -->
     <link rel="stylesheet" href="fonts/webfont/opensans.css">
     <!-- Preload fonts -->
@@ -11,7 +11,7 @@
     <link rel="preload" href="fonts/webfont/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/webfont/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/webfont/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/icons/fonts/icomoon.woff" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/icons/fonts/icomoon.woff" as="font" type="font/woff" crossorigin="anonymous">
     <!-- Import CSS files -->
     <link rel="stylesheet" href="style-resets.css">
     <link rel="stylesheet" href="styles.css">
@@ -51,63 +51,56 @@
       <div class="page-header">
         <div class="header-container pagewidth">
           <h2>Your multisig accounts</h2>
+          <button class="hidden button-primary" aria-hidden="true">Hidden Button</button>
         </div>
       </div>
       <div class="content pagewidth">
         <div class="side-by-side-container">
-          <div class="side-by-side accounts-list scrollable">
-            <div class="account selected">
+          <!-- Left side: Account list using multisig-account class for styling -->
+          <div class="side-by-side accounts-list scrollable custom-scrollbar">
+            <div class="multisig-account selected">
               <h3>Demo Account</h3>
               <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
             </div>
-            <div class="account">
+            <div class="multisig-account">
               <h3>Test Account 1</h3>
               <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
             </div>
-            <div class="account">
+            <div class="multisig-account">
               <h3>Test Account 2</h3>
               <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
             </div>
-            <div class="account">
+            <div class="multisig-account">
               <h3>Test Account 3</h3>
               <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
             </div>
-            <div class="account">
+            <div class="multisig-account">
               <h3>Test Account 4</h3>
               <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
             </div>
-            <div class="account">
+            <div class="multisig-account">
               <h3>Test Account 5</h3>
               <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
             </div>
-            <div class="account">
-              <h3>Test Account 6</h3>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="account">
-              <h3>Test Account 7</h3>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="account">
-              <h3>Test Account 8</h3>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
-            <div class="account">
-              <h3>Test Account 9</h3>
-              <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP"></p>
-            </div>
           </div>
-          <div class="side-by-side account-details scrollable">
+
+          <!-- Right side: Account details -->
+          <div class="side-by-side account-details scrollable custom-scrollbar">
             <div class="account-details-wrapper">
               <div class="account-details-header">
                 <h3>Demo account</h3>
-                <h4>5GHjMgGkydmNStMAK6giDCjHB1h4fHBh9N1N6ejTJ8C3YDqSP</h4>
+                <p class="account-address" data-value="5GHjMgGkydmNStMAK6giDCjHB1h4fHBh9N1N6ejTJ8C3YDqSP"></p>
                 <div class="account-balance">
                   <p>Free: <span>0.0000 C</span></p>
                   <p>Staked: <span>0.0000 C</span></p>
                 </div>
-                <button class="button">Send</button> <button class="button">Edit</button> <button class="button">Add proxy</button>
+                <div class="button-group">
+                  <button class="button-primary">Send</button>
+                  <button class="button-primary">Edit</button>
+                  <button class="button-primary">Add proxy</button>
+                </div>
               </div>
+
               <div class="account-details-content">
                 <h4>Account Details</h4>
                 <p>Threshold: <span>2/2</span></p>
@@ -116,29 +109,14 @@
                   <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account1</li>
                   <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account2</li>
                   <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account3</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account4</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account5</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account6</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account7</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account8</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account9</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account10</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account11</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account12</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account13</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account14</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account15</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account16</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account17</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account18</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account19</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account20</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account21</li>
-                  <li title="5GHjMgGkydmNStMAK6giDCjHB1pfHBh9N1N6ejTJ8C3YDqSP">Test account22</li>
+                  <!-- Additional signatories... -->
                 </ul>
               </div>
+
               <div class="account-details-approvals">
                 <h4>Pending Approvals</h4>
+                <!-- No approvals to show -->
+                <p class="light">No pending approvals</p>
               </div>
             </div>
           </div>

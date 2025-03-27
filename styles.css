@@ -1,3 +1,4 @@
+/* Root variables with clean gradient definitions */
 :root {
   --scrollbar-width: 6px;
   --background-color: rgba(235,235,235,1);
@@ -6,19 +7,44 @@
 
   --webfont-family: 'Open Sans', sans-serif;
 
-  --content-gutter: 20px;
+  --content-gutter: 16px;
   --content-gutter-half: calc(var(--content-gutter) / 2);
   --content-gutter-text: calc(var(--content-gutter) / 3);
+  --page-gutter: calc(var(--content-gutter) * 2);
   --border-radius: 6px;
+  --column-size: 25rem;
 
-  --header-height: 61px;
-
+  /* Theme colors */
   --primary-color: #fff;
   --primary-text-color: #000000;
-  --primary-shadow: 0 0 #0000, 0 1px 3px 0 rgba(0, 0, 0, .4), 0 .5px .5px 0 rgba(255, 255, 255, .12) inset;
+  --primary-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 1px 3px 0 rgba(0, 0, 0, .2), inset 0 1px 1px 0 rgba(255, 255, 255, .12);
+
+  /* Refined accent colors - only greys and whites */
+  --accent-color-1: rgba(240, 240, 240, 0.8);
+  --accent-color-2: rgba(230, 230, 230, 0.5);
+  --accent-color-3: rgba(220, 220, 220, 0.3);
+
+  /* Clean gradient definitions */
+  --clean-gradient-1: linear-gradient(
+    to bottom right,
+    var(--background-color-secondary) 0%,
+    var(--accent-color-1) 100%
+  );
+
+  --clean-gradient-2: linear-gradient(
+    to bottom,
+    var(--background-color-secondary) 0%,
+    var(--accent-color-2) 100%
+  );
+
+  --clean-gradient-3: linear-gradient(
+    to right,
+    var(--background-color-secondary) 0%,
+    var(--accent-color-1) 100%
+  );
 }
 
-/* Dark theme */
+/* Dark theme enhanced */
 [data-theme="dark"] {
   --background-color: rgba(12,17,28,1);
   --background-color-secondary: rgb(45, 54, 82);
@@ -26,6 +52,11 @@
 
   --primary-color: #6b75974d;
   --primary-text-color: #fff1e6;
+
+  /* Dark theme accent colors - staying within blue family */
+  --accent-color-1: rgba(55, 64, 85, 0.3);
+  --accent-color-2: rgba(50, 59, 80, 0.2);
+  --accent-color-3: rgba(60, 70, 90, 0.1);
 }
 
 *,
@@ -48,9 +79,11 @@ body {
   align-items: center;
   height: 100%;
   overflow: hidden;
-  /* background: linear-gradient(184deg, var(--background-color) 0%, var(--background-color-secondary) 100%); */
-  background: radial-gradient(ellipse at top, var(--background-color), transparent),
-    radial-gradient(ellipse at bottom, var(--background-color-secondary), var(--background-color-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--background-color) 0%,
+    var(--background-color-secondary) 100%
+  );
   color: var(--text-color);
 }
 
@@ -71,6 +104,14 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 b, strong {
@@ -104,14 +145,14 @@ header {
   flex-direction: column;
   align-items: center;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0) 75%);
-  /* border-bottom: 1px solid rgba(0, 0, 0, .01); */
+  box-shadow: inset 0 -1px 2px rgba(255, 255, 255, .025);
 }
 
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--content-gutter);
+  padding: 0 var(--page-gutter);
 }
 
 a {
@@ -146,7 +187,7 @@ ul {
 
 footer {
   font-size: 0.8em;
-  padding: 0 var(--content-gutter) var(--content-gutter-half);
+  padding: var(--content-gutter-half) var(--page-gutter);
   flex-direction: column;
 }
 
@@ -189,8 +230,6 @@ main {
 
 .content {
   margin: 0 auto;
-  padding-top: var(--content-gutter);
-  padding-bottom: var(--content-gutter);
   flex-grow: 1;
   overflow: hidden;
 }
@@ -198,13 +237,11 @@ main {
 .side-by-side-container {
   overflow: hidden;
   max-height: 100%;
+  padding: var(--content-gutter) var(--page-gutter);
 }
 
 .pagewidth {
   width: 100%;
-  max-width: 80rem;
-  padding-left: var(--content-gutter);
-  padding-right: var(--content-gutter);
 }
 
 .scrollable {
@@ -228,9 +265,10 @@ footer a {
 }
 
 .page-header {
-  padding: var(--content-gutter) 0;
+  padding: var(--content-gutter-half) var(--page-gutter);
   background: var(--background-color);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, .075),
+    0 1px 2px rgba(255, 255, 255, .025);
 }
 
 .header-container {
@@ -246,7 +284,6 @@ footer a {
   margin: 0 auto 0 0;
 }
 
-
 .side-by-side-container {
   display: flex;
   gap: var(--content-gutter);
@@ -260,7 +297,7 @@ footer a {
 .side-item {
   flex: 1;
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
 }
 
 .side-item-content {
@@ -268,9 +305,74 @@ footer a {
   border-radius: var(--border-radius);
 }
 
+/* Multisig account styling with clean gradients */
 .multisig-account {
-  margin: var(--content-gutter);
+  display: flex;
+  flex-direction: column;
+  background: var(--clean-gradient-2);
   border-radius: var(--border-radius);
+  padding: var(--content-gutter);
+  margin-bottom: var(--content-gutter);
+  box-shadow: var(--primary-shadow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.multisig-account::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--accent-color-1) 100%
+  );
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.multisig-account:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--primary-shadow), 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.multisig-account:hover::after {
+  opacity: 0.4;
+}
+
+.multisig-account:active {
+  transform: translateY(0);
+}
+
+.multisig-account h5 {
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Make account address properly handle overflow */
+.multisig-account .account-address {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: monospace;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Updated selected state without left border */
+.multisig-account.selected {
+  background: var(--clean-gradient-1);
+  box-shadow: var(--primary-shadow), 0 0 0 2px var(--accent-color-1);
 }
 
 .account {
@@ -288,7 +390,7 @@ footer a {
 }
 
 .accounts-list {
-  flex: 0 0 25%;
+  flex: 0 0 30rem;
 }
 
 /* Show the truncated version */
@@ -302,16 +404,16 @@ footer a {
 }
 
 .account:not(.selected):hover {
-  background: var(--scrollbar-track-color);
+  background: var(--accent-color-3);
 }
 
 .account {
-  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  border-radius: var(--border-radius);
 }
 
 .account-details {
   flex-grow: 1;
-  border-radius: 0 var(--border-radius) var(--border-radius) var(--border-radius);
+  border-radius: var(--border-radius);
 }
 
 .account-details-wrapper > div:not(:first-of-type) {
@@ -322,22 +424,58 @@ footer a {
   margin: var(--content-gutter) 0;
 }
 
-
-/* Accounts list */
+/* Accounts list with enhanced responsive grid */
 .accounts-account-list-container {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--column-size), 1fr));
   gap: var(--content-gutter);
+  width: 100%;
+  max-width: 100%;
+  padding: var(--content-gutter) var(--page-gutter);
+  box-sizing: border-box;
 }
 
+.accounts-account-list-container.has-scrollbar {
+  padding-right: calc(var(--page-gutter) - var(--scrollbar-width));
+}
+
+/* Account list item styling with clean gradients */
 .account-list-item {
-  background: var(--background-color-secondary);
-  padding: var(--content-gutter);
-  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  background: var(--clean-gradient-3);
   border-radius: var(--border-radius);
+  padding: var(--content-gutter);
+  box-shadow: var(--primary-shadow);
+  min-width: 0;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
+.account-list-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--primary-shadow), 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Make account address properly handle overflow */
+.account-list-item .account-address {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: 1;
+}
+
+/* Button container at the bottom */
+.account-list-item > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--content-gutter-half);
+  margin-top: var(--content-gutter);
+  position: relative;
+  z-index: 1;
+}
 
 /* Theme toggle */
 .theme-toggle-wrapper {
@@ -404,23 +542,185 @@ footer a {
   outline-offset: 2px;
 }
 
-button {
-  cursor: pointer;
+/* Extrinsic page styling */
+.extrinsic-filter-buttons {
+  display: flex;
+  gap: var(--content-gutter-half);
 }
 
+.button-secondary.active {
+  background: var(--accent-color-1);
+  box-shadow: var(--primary-shadow), 0 0 0 2px var(--accent-color-2);
+}
+
+/* Extrinsic list styling */
+.extrinsic-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--content-gutter);
+  padding: var(--content-gutter) 0;
+}
+
+.extrinsic-item {
+  background: var(--clean-gradient-3);
+  border-radius: var(--border-radius);
+  padding: var(--content-gutter);
+  box-shadow: var(--primary-shadow);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.extrinsic-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--primary-shadow), 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling */
+.extrinsic-icon {
+  position: absolute;
+  top: var(--content-gutter);
+  right: var(--content-gutter);
+  font-size: 20px;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.extrinsic-item:hover .extrinsic-icon {
+  opacity: 1;
+}
+
+.extrinsic-name {
+  font-weight: bold;
+  margin-bottom: var(--content-gutter-half);
+  font-family: monospace;
+  color: var(--text-color);
+}
+
+.extrinsic-description {
+  font-size: 0.9em;
+  color: var(--text-color);
+  opacity: 0.8;
+  flex-grow: 1;
+  padding-right: calc(var(--content-gutter) + 24px); /* Extra padding for the icon */
+}
+
+.extrinsic-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--background-color-secondary);
+  border: 2px solid var(--accent-color-1);
+  margin-top: var(--content-gutter);
+  align-self: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .extrinsic-filter-buttons {
+    flex-wrap: wrap;
+  }
+
+  .extrinsic-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Button system */
+button {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  font-family: var(--webfont-family);
+  padding: var(--content-gutter-half) var(--content-gutter);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--content-gutter-text);
+  border: none;
+}
+
+/* Primary buttons - for main actions */
 .button-primary {
   background: var(--primary-color);
   color: var(--primary-text-color);
-  border: none;
-  padding: var(--content-gutter-half) var(--content-gutter);
   box-shadow: var(--primary-shadow);
-  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.button-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.05),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  opacity: 0;
 }
 
 .button-primary:hover {
   background: var(--background-color-secondary);
+  transform: translateY(-1px);
 }
 
+.button-primary:hover::before {
+  transform: translateX(100%);
+  opacity: 0.5;
+}
+
+.button-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary buttons - for standard actions */
+.button-secondary {
+  background: var(--accent-color-3);
+  color: var(--text-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary:hover {
+  background: var(--accent-color-2);
+  transform: translateY(-1px);
+}
+
+.button-secondary:active {
+  transform: translateY(0);
+}
+
+/* Tertiary buttons - for less important actions */
+.button-tertiary {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--accent-color-2);
+}
+
+.button-tertiary:hover {
+  background: var(--accent-color-3);
+}
+
+[data-theme="dark"] .button-tertiary {
+  border-color: var(--accent-color-1);
+}
+
+/* Icons in buttons */
+button [class^="icon-"] {
+  font-size: 0.9em;
+}
 
 /* Form elements */
 input,
@@ -493,7 +793,7 @@ textarea:disabled {
 }
 
 .input-group label {
-  font-weight: 500;
+  font-size: 0.9em;
 }
 
 .input-group input {
@@ -568,4 +868,8 @@ textarea:disabled {
 
 .grid-justify-end {
   justify-items: end;
+}
+
+.hidden {
+  visibility: hidden;
 }

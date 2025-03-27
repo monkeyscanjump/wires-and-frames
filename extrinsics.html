@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Layout</title>
+    <title>Extrinsics - Secure Sign</title>
     <!-- Import fonts -->
     <link rel="stylesheet" href="fonts/webfont/opensans.css">
     <!-- Preload fonts -->
@@ -11,7 +11,7 @@
     <link rel="preload" href="fonts/webfont/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/webfont/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/webfont/OpenSans-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/icons/fonts/icomoon.woff" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/icons/fonts/icomoon.woff" as="font" type="font/woff" crossorigin="anonymous">
     <!-- Import CSS files -->
     <link rel="stylesheet" href="style-resets.css">
     <link rel="stylesheet" href="styles.css">
@@ -50,13 +50,108 @@
     <main class="extrinsics-page">
       <div class="page-header">
         <div class="header-container pagewidth">
-          <h2>Extrinsic</h2>
-          <button class="button-primary">Validator</button>
-          <button class="button-primary">Subnet</button>
-          <button class="button-primary">User</button>
+          <h2>Extrinsics</h2>
+          <div class="extrinsic-filter-buttons">
+            <button class="button-secondary active">All</button>
+            <button class="button-secondary">Validator</button>
+            <button class="button-secondary">Subnet</button>
+            <button class="button-secondary">User</button>
+          </div>
         </div>
       </div>
-      <div class="content"></div>
+      <div class="content pagewidth">
+        <div class="extrinsic-list">
+          <!-- Extrinsic items -->
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-plus-circle"></span>
+            <div class="extrinsic-name">addStake</div>
+            <div class="extrinsic-description">Adds stake to a specified hotkey.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-layers"></span>
+            <div class="extrinsic-name">addStakeMultiple</div>
+            <div class="extrinsic-description">Batch-version for addStake.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-x-circle"></span>
+            <div class="extrinsic-name">deregister</div>
+            <div class="extrinsic-description">Deregisters a module.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-user-plus"></span>
+            <div class="extrinsic-name">register</div>
+            <div class="extrinsic-description">Registers a module.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-minus-circle"></span>
+            <div class="extrinsic-name">removeStake</div>
+            <div class="extrinsic-description">Removes stake from the staking account.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-folder-minus"></span>
+            <div class="extrinsic-name">removeStakeMultiple</div>
+            <div class="extrinsic-description">Batch version of remove-stake.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-send"></span>
+            <div class="extrinsic-name">transferAll</div>
+            <div class="extrinsic-description">Transfers the entire transferable balance from the caller account.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-alert-triangle"></span>
+            <div class="extrinsic-name">transferAllowDeath</div>
+            <div class="extrinsic-description">Transfers free balance to another account while it can be reaped.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-shield"></span>
+            <div class="extrinsic-name">transferKeepAlive</div>
+            <div class="extrinsic-description">Transfers free balance to another account while ensuring the existence of the account after the transfer.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-share-2"></span>
+            <div class="extrinsic-name">transferMultiple</div>
+            <div class="extrinsic-description">Batch version of transfer.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-refresh-cw"></span>
+            <div class="extrinsic-name">transferStake</div>
+            <div class="extrinsic-description">Moves stake from one coldkey/module to another.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+
+          <div class="extrinsic-item">
+            <span class="extrinsic-icon icon-settings"></span>
+            <div class="extrinsic-name">updateModule</div>
+            <div class="extrinsic-description">Updates module metadata.</div>
+            <div class="extrinsic-indicator"></div>
+          </div>
+        </div>
+        <div class="extrinsic-action-buttons">
+          <button id="extrinsic-next-button" class="button-primary" disabled>
+            Next <span class="icon-arrow-right"></span>
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer>
