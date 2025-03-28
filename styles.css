@@ -48,10 +48,10 @@
 [data-theme="dark"] {
   --background-color: rgba(12,17,28,1);
   --background-color-secondary: rgb(45, 54, 82);
-  --text-color: #ffffff;
+  --text-color: #fff1e6;
 
   --primary-color: #6b75974d;
-  --primary-text-color: #fff1e6;
+  --primary-text-color: var(--text-color);
 
   /* Dark theme accent colors - staying within blue family */
   --accent-color-1: rgba(55, 64, 85, 0.3);
@@ -189,6 +189,8 @@ footer {
   font-size: 0.8em;
   padding: var(--content-gutter-half) var(--page-gutter);
   flex-direction: column;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .075),
+    inset 0 1px 2px rgba(255, 255, 255, .025);
 }
 
 nav {
@@ -237,11 +239,15 @@ main {
 .side-by-side-container {
   overflow: hidden;
   max-height: 100%;
-  padding: var(--content-gutter) var(--page-gutter);
 }
 
 .pagewidth {
   width: 100%;
+}
+
+.page-gutter {
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
 .scrollable {
@@ -286,7 +292,6 @@ footer a {
 
 .side-by-side-container {
   display: flex;
-  gap: var(--content-gutter);
   flex-grow: 1;
 }
 
@@ -298,27 +303,55 @@ footer a {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: var(--page-gutter) 0;
+}
+
+.side-item:first-of-type > h3 {
+  padding-left: var(--page-gutter);
+  padding-right: var(--content-gutter-half);
+}
+
+.side-item:first-of-type .side-item-content {
+  padding: var(--content-gutter-half) var(--content-gutter-half) var(--content-gutter-half) var(--page-gutter);
+}
+
+.side-item:first-of-type .side-item-content.has-scrollbar {
+  padding-right: calc(var(--content-gutter-half) - var(--scrollbar-width));
+}
+
+.side-item:last-of-type .side-item-content {
+  padding: var(--content-gutter-half) var(--page-gutter) var(--content-gutter-half) var(--content-gutter-half);
+}
+
+.side-item:last-of-type > h3 {
+  padding-right: var(--page-gutter);
+  padding-left: var(--content-gutter-half);
 }
 
 .side-item-content {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+  gap: var(--content-gutter);
   border-radius: var(--border-radius);
 }
 
 /* Multisig account styling with clean gradients */
+.multisig-accounts-page .multisig-account {
+  flex-direction: column;
+}
+
 .multisig-account {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   background: var(--clean-gradient-2);
   border-radius: var(--border-radius);
   padding: var(--content-gutter);
-  margin-bottom: var(--content-gutter);
   box-shadow: var(--primary-shadow);
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 0;
   position: relative;
-  overflow: hidden;
 }
 
 .multisig-account::after {
@@ -390,7 +423,19 @@ footer a {
 }
 
 .accounts-list {
+  display: flex;
+  flex-direction: column;
   flex: 0 0 30rem;
+  gap: var(--content-gutter);
+  padding: var(--page-gutter) var(--content-gutter) var(--page-gutter) var(--page-gutter);
+}
+
+.accounts-list.has-scrollbar {
+  padding-right: calc(var(--content-gutter) - var(--scrollbar-width));
+}
+
+.account-details {
+  padding: var(--page-gutter) var(--page-gutter) var(--page-gutter) var(--content-gutter);
 }
 
 /* Show the truncated version */
@@ -431,7 +476,7 @@ footer a {
   gap: var(--content-gutter);
   width: 100%;
   max-width: 100%;
-  padding: var(--content-gutter) var(--page-gutter);
+  padding: var(--page-gutter);
   box-sizing: border-box;
 }
 
@@ -543,6 +588,10 @@ footer a {
 }
 
 /* Extrinsic page styling */
+.extrinsics-page h3 {
+  margin-top: var(--content-gutter);
+}
+
 .extrinsic-filter-buttons {
   display: flex;
   gap: var(--content-gutter-half);
@@ -558,7 +607,7 @@ footer a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--content-gutter);
-  padding: var(--content-gutter) 0;
+  padding: 0 var(--page-gutter) var(--content-gutter);
 }
 
 .extrinsic-item {
@@ -628,6 +677,17 @@ footer a {
   .extrinsic-list {
     grid-template-columns: 1fr;
   }
+}
+
+.extrinsic-action-buttons {
+  grid-column: 1 / -1;
+  position: sticky;
+  bottom: 0;
+}
+
+#extrinsic-next-button {
+  width: 100%;
+  height: 100%;
 }
 
 /* Button system */

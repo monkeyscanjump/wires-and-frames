@@ -20,7 +20,7 @@
     <link rel="preload" href="script.js" as="script">
   </head>
 
-  <body class="scrollable">
+  <body>
     <header>
       <div class="header-wrapper pagewidth">
         <div class="logo">
@@ -52,14 +52,24 @@
         <div class="header-container pagewidth">
           <h2>Extrinsics</h2>
           <div class="extrinsic-filter-buttons">
-            <button class="button-secondary active">All</button>
+            <button class="button-primary">All</button>
             <button class="button-secondary">Validator</button>
             <button class="button-secondary">Subnet</button>
             <button class="button-secondary">User</button>
           </div>
         </div>
       </div>
-      <div class="content pagewidth">
+      <div class="content pagewidth scrollable">
+        <div class="page-gutter">
+          <h3>Select account</h3>
+          <select>
+            <option value="0">Account 1</option>
+            <option value="1">Account 2</option>
+            <option value="2">Account 3</option>
+            <option value="3">Account 4</option>
+          </select>
+          <h3>Select extrinsic</h3>
+        </div>
         <div class="extrinsic-list">
           <!-- Extrinsic items -->
           <div class="extrinsic-item">
@@ -145,11 +155,11 @@
             <div class="extrinsic-description">Updates module metadata.</div>
             <div class="extrinsic-indicator"></div>
           </div>
-        </div>
-        <div class="extrinsic-action-buttons">
-          <button id="extrinsic-next-button" class="button-primary" disabled>
-            Next <span class="icon-arrow-right"></span>
-          </button>
+          <div class="extrinsic-action-buttons">
+            <button id="extrinsic-next-button" class="button-primary" disabled>
+              Next <span class="icon-arrow-right"></span>
+            </button>
+          </div>
         </div>
       </div>
     </main>
