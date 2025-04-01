@@ -11,6 +11,39 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', newTheme);
   });
 
+  // Network selector functionality
+  const blockchainSelector = document.querySelector('.blockchain-selector');
+  if (blockchainSelector) {
+    blockchainSelector.addEventListener('click', () => {
+      document.body.classList.toggle('network-selection');
+
+      // Optional: Add ESC key listener to close network selection
+      if (document.body.classList.contains('network-selection')) {
+        document.addEventListener('keydown', handleEscKey);
+      } else {
+        document.removeEventListener('keydown', handleEscKey);
+      }
+    });
+
+    // Close network selection when clicking outside
+    document.addEventListener('click', (event) => {
+      if (document.body.classList.contains('network-selection') &&
+          !event.target.closest('.blockchain-selector') &&
+          !event.target.closest('.network-selection-panel')) {
+        document.body.classList.remove('network-selection');
+        document.removeEventListener('keydown', handleEscKey);
+      }
+    });
+
+    // Handle ESC key to close network selection
+    function handleEscKey(event) {
+      if (event.key === 'Escape' || event.keyCode === 27) {
+        document.body.classList.remove('network-selection');
+        document.removeEventListener('keydown', handleEscKey);
+      }
+    }
+  }
+
   // Scrollbar handling and detection
   const isNonMobileDevice = !/android|iphone|ipad|ipod|macintosh|mac os x/.test(navigator.userAgent.toLowerCase());
   const scrollableElements = document.querySelectorAll('.scrollable');

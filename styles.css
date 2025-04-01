@@ -1,7 +1,7 @@
 /* Root variables with clean gradient definitions */
 :root {
   --scrollbar-width: 6px;
-  --background-color: rgba(235,235,235,1);
+  --background-color: rgba(238,234,231,1);
   --background-color-secondary: rgba(255,255,255,1);
   --text-color: #000000;
 
@@ -25,30 +25,24 @@
   --accent-color-3: rgba(220, 220, 220, 0.3);
 
   /* Clean gradient definitions */
-  --clean-gradient-1: linear-gradient(
+  /* --background-color-secondary: linear-gradient(
     to bottom right,
     var(--background-color-secondary) 0%,
     var(--accent-color-1) 100%
   );
 
-  --clean-gradient-2: linear-gradient(
+  --background-color-secondary: linear-gradient(
     to bottom,
     var(--background-color-secondary) 0%,
-    var(--accent-color-2) 100%
-  );
-
-  --clean-gradient-3: linear-gradient(
-    to right,
-    var(--background-color-secondary) 0%,
-    var(--accent-color-1) 100%
-  );
+    var(--background-color) 100%
+  ); */
 }
 
 /* Dark theme enhanced */
 [data-theme="dark"] {
   --background-color: rgba(12,17,28,1);
   --background-color-secondary: rgb(45, 54, 82);
-  --text-color: #fff1e6;
+  --text-color: #f1e1d3;
 
   --primary-color: #6b75974d;
   --primary-text-color: var(--text-color);
@@ -155,6 +149,63 @@ header {
   padding: 0 var(--page-gutter);
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  color: currentColor;
+}
+
+.header-options {
+  display: flex;
+  gap: var(--content-gutter);
+}
+
+.blockchain-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--content-gutter-half);
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  transition: transform 0.2s ease;
+  height: 32px;
+}
+
+.network-selection-close {
+  position: absolute;
+  right: 0;
+  font-size: 32px;
+  opacity: 0;
+  transition: top 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.network-selection .network-selection-close {
+  opacity: 1;
+  top: calc(-100% - var(--content-gutter) - var(--content-gutter-half));
+  transition-delay: 0.1s;
+}
+
+.network-selection .blockchain-selector {
+  transform: translateY(calc(100% + var(--content-gutter) + var(--content-gutter-half)));
+}
+
+.network-selection main {
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.blockchain-selector svg {
+  fill: #e6007a;
+}
+
 a {
   text-decoration: none;
   color: var(--text-color);
@@ -228,6 +279,7 @@ main {
   flex-direction: column;
   overflow: hidden;
   width: 100%;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .content {
@@ -243,6 +295,7 @@ main {
 
 .pagewidth {
   width: 100%;
+  max-width: 1920px;
 }
 
 .page-gutter {
@@ -271,7 +324,7 @@ footer a {
 }
 
 .page-header {
-  padding: var(--content-gutter-half) var(--page-gutter);
+  padding: var(--content-gutter-half) 0;
   background: var(--background-color);
   box-shadow: inset 0 0 5px rgba(0, 0, 0, .075),
     0 1px 2px rgba(255, 255, 255, .025);
@@ -282,6 +335,7 @@ footer a {
   justify-content: space-between;
   align-items: center;
   margin: auto;
+  padding: 0 var(--page-gutter);
   gap: var(--content-gutter);
 }
 
@@ -315,9 +369,9 @@ footer a {
   padding: var(--content-gutter-half) var(--content-gutter-half) var(--content-gutter-half) var(--page-gutter);
 }
 
-.side-item:first-of-type .side-item-content.has-scrollbar {
+/* .side-item:first-of-type .side-item-content.has-scrollbar {
   padding-right: calc(var(--content-gutter-half) - var(--scrollbar-width));
-}
+} */
 
 .side-item:last-of-type .side-item-content {
   padding: var(--content-gutter-half) var(--page-gutter) var(--content-gutter-half) var(--content-gutter-half);
@@ -344,7 +398,7 @@ footer a {
 .multisig-account {
   display: flex;
   justify-content: space-between;
-  background: var(--clean-gradient-2);
+  background: var(--background-color-secondary);
   border-radius: var(--border-radius);
   padding: var(--content-gutter);
   box-shadow: var(--primary-shadow);
@@ -404,7 +458,7 @@ footer a {
 
 /* Updated selected state without left border */
 .multisig-account.selected {
-  background: var(--clean-gradient-1);
+  background: var(--background-color-secondary);
   box-shadow: var(--primary-shadow), 0 0 0 2px var(--accent-color-1);
 }
 
@@ -488,7 +542,7 @@ footer a {
 .account-list-item {
   display: flex;
   flex-direction: column;
-  background: var(--clean-gradient-3);
+  background: var(--background-color-secondary);
   border-radius: var(--border-radius);
   padding: var(--content-gutter);
   box-shadow: var(--primary-shadow);
@@ -543,7 +597,7 @@ footer a {
   height: 24px;
   padding: 0;
   border-radius: 12px;
-  background-color: #e0e0e0;
+  background-color: #dad5d1;
   display: block;
   position: relative;
   transition: all 0.2s ease;
@@ -611,7 +665,7 @@ footer a {
 }
 
 .extrinsic-item {
-  background: var(--clean-gradient-3);
+  background: var(--background-color-secondary);
   border-radius: var(--border-radius);
   padding: var(--content-gutter);
   box-shadow: var(--primary-shadow);
