@@ -200,6 +200,7 @@ header {
 .network-selection main {
   opacity: 0.05;
   pointer-events: none;
+  user-select: none;
 }
 
 .blockchain-selector svg {

@@ -20,8 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Optional: Add ESC key listener to close network selection
       if (document.body.classList.contains('network-selection')) {
         document.addEventListener('keydown', handleEscKey);
+        // When network selection is active, make main content not focusable
+        disableMainContentFocus(true);
       } else {
         document.removeEventListener('keydown', handleEscKey);
+        // When network selection is closed, restore focus
+        disableMainContentFocus(false);
       }
     });
 
@@ -32,17 +36,63 @@ document.addEventListener('DOMContentLoaded', () => {
           !event.target.closest('.network-selection-panel')) {
         document.body.classList.remove('network-selection');
         document.removeEventListener('keydown', handleEscKey);
+        // Restore focus when clicking outside
+        disableMainContentFocus(false);
       }
     });
+
+    // Close button in network selection panel
+    const networkSelectionClose = document.querySelector('.network-selection-close');
+    if (networkSelectionClose) {
+      networkSelectionClose.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent event from bubbling to parent elements
+        document.body.classList.remove('network-selection');
+        document.removeEventListener('keydown', handleEscKey);
+        disableMainContentFocus(false);
+      });
+    }
 
     // Handle ESC key to close network selection
     function handleEscKey(event) {
       if (event.key === 'Escape' || event.keyCode === 27) {
         document.body.classList.remove('network-selection');
         document.removeEventListener('keydown', handleEscKey);
+        disableMainContentFocus(false);
       }
     }
   }
+
+  // Function to make all elements within <main> not focusable
+  function disableMainContentFocus(disable) {
+    const mainElement = document.querySelector('main');
+    if (!mainElement) return;
+
+    // List of all potentially focusable elements
+    const focusableElements = mainElement.querySelectorAll(
+      'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    focusableElements.forEach(element => {
+      if (disable) {
+        // Store original tabindex if it exists
+        if (element.hasAttribute('tabindex')) {
+          element.setAttribute('data-original-tabindex', element.getAttribute('tabindex'));
+        }
+        element.setAttribute('tabindex', '-1');
+      } else {
+        // Restore original tabindex or remove it
+        if (element.hasAttribute('data-original-tabindex')) {
+          element.setAttribute('tabindex', element.getAttribute('data-original-tabindex'));
+          element.removeAttribute('data-original-tabindex');
+        } else {
+          element.removeAttribute('tabindex');
+        }
+      }
+    });
+  }
+
+  // Initially disable focus on main content for better UX
+  disableMainContentFocus(true);
 
   // Scrollbar handling and detection
   const isNonMobileDevice = !/android|iphone|ipad|ipod|macintosh|mac os x/.test(navigator.userAgent.toLowerCase());
