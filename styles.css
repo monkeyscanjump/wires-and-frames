@@ -181,6 +181,7 @@ header {
 
 .network-selection-close {
   position: absolute;
+  top: 50%;
   right: 0;
   font-size: 32px;
   opacity: 0;
@@ -190,7 +191,6 @@ header {
 .network-selection .network-selection-close {
   opacity: 1;
   top: calc(-100% - var(--content-gutter) - var(--content-gutter-half));
-  transition-delay: 0.1s;
 }
 
 .network-selection .blockchain-selector {
